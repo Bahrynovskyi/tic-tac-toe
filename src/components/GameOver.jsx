@@ -1,7 +1,19 @@
 import React from "react";
+import GameState from "./GameState";
 
-const GameOver = () => {
-  return <div>GameOver</div>;
+const GameOver = ({ gameState }) => {
+  switch (gameState) {
+    case GameState.inProgress:
+      return <></>;
+    default:
+      return <></>;
+    case GameState.playerOWins:
+      return <div className="game-over">O Wins</div>;
+    case GameState.playerXWins:
+      return <div className="game-over">X Wins</div>;
+    case GameState.draw:
+      return <div className="game-over">Draw</div>;
+  }
 };
 
 export default GameOver;
